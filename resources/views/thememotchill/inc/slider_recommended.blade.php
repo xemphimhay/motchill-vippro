@@ -1,10 +1,17 @@
 @if ($recommendations)
+<style>
+    @media (max-width: 767px){
+.widthphull{
+    width: 50%
+}
+    }
+</style>
     <div class="myui-top-movies">
         <h2 class="ml-[10px] myui-block-title mr-sm-10 color-orange">{{ $recommendations['label'] }}</h2>
         <div class="flickity clearfix">
 
             @foreach ($recommendations['data'] as $movie)
-                <div class="col-lg-5 col-md-5 col-sm-4 col-xs-3">
+                <div class="col-lg-5 col-md-5 col-sm-4 col-xs-3 widthphull">
 
                     <article class="mr-4 max-w-xs rounded-md group text-gray-50 relative overflow-hidden pb-2">
                         <a title="Phim {{ $movie->name }} {{ $movie->publish_year }}" href="{{ $movie->getUrl() }}" class="relative">
